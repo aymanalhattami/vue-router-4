@@ -11,7 +11,7 @@
         </div>
     </section>
     <section class="experiences">
-        <h2>Top Experienen in {{ destination.name }}</h2>
+        <h2>Top Experience in {{ destination.name }}</h2>
         <div class="cards">
             <router-link
                 v-for="experience in destination.experiences"

@@ -11,7 +11,7 @@ const routes = [
         name: 'protected',
         component: () => import("@/views/ProtectedMe.vue"),
         meta: {
-            requiresAtuh: true
+            requiresAuth: true
         },
     },
     {
@@ -19,7 +19,7 @@ const routes = [
         name: 'invoices',
         component: () => import("@/views/Invoices.vue"),
         meta: {
-            requiresAtuh: true
+            requiresAuth: true
         },
     },
     {
@@ -71,7 +71,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from) => {
-    if (to.meta.requiresAtuh && !window.username) {
+    if (to.meta.requiresAuth && !window.username) {
         return { name: 'login', query: {redirect: to.fullPath} };
     }
 });
